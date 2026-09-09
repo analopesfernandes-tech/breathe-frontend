@@ -1,0 +1,778 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #000483;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* --------------------
+   BREATHE
+-------------------- */
+
+.breathe-card {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.breathe-title {
+  margin: 0;
+
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: -3px;
+
+  animation: breathe 7s ease-in-out forwards;
+}
+
+/* --------------------
+   CONTENT STAGE
+-------------------- */
+
+.content-stage {
+  min-height: 190px;
+  margin-top: 2.5rem;
+}
+
+/* --------------------
+   INTRO
+-------------------- */
+
+.intro {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 40px 90px 60px;
+}
+
+.typing-text {
+  grid-row: 1;
+
+  margin: 0;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+
+  animation: blink 0.9s step-end infinite;
+}
+
+/* --------------------
+   DESCRIPTION
+-------------------- */
+
+.description {
+  grid-row: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0;
+
+  opacity: 0;
+
+  animation: fadeIn 1.8s ease forwards;
+}
+
+.description p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --------------------
+   BUTTONS
+-------------------- */
+
+.discover-button,
+.another-button {
+  border: none;
+  border-radius: 999px;
+
+  padding: 14px 28px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  background: #000483;
+  color: #f4faff;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.discover-button {
+  grid-row: 3;
+
+  align-self: center;
+  justify-self: center;
+
+  margin: 0;
+
+  animation: fadeIn 1.8s ease forwards;
+}
+
+.discover-button:active,
+.another-button:active {
+  transform: scale(0.96);
+}
+
+.another-button {
+  align-self: center;
+  justify-self: center;
+
+  margin-top: 2rem;
+}
+
+.another-button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* --------------------
+   MESSAGE
+-------------------- */
+
+.message {
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  animation: messageIn 1.2s ease forwards;
+}
+
+.quote {
+  max-width: 340px;
+
+  margin: 0;
+
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.author {
+  margin: 1.25rem 0 0;
+
+  font-size: 0.9rem;
+}
+
+.source {
+  margin: 0.35rem 0 0;
+
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* --------------------
+   ANIMATIONS
+-------------------- */
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------
+   ADMIN
+-------------------- */
+
+.admin {
+  width: 100%;
+  max-width: 480px;
+
+  margin: 0 auto;
+
+  text-align: left;
+}
+
+.admin h1 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.admin h2 {
+  margin: 2.5rem 0 1.5rem;
+
+  text-align: center;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* --------------------
+   ADMIN STATS
+-------------------- */
+
+.admin-stats {
+  margin: 2.5rem 0 3rem;
+}
+
+.admin-total {
+  padding-bottom: 1.5rem;
+
+  border-bottom: 1px solid #e4e5ed;
+}
+
+.admin-total span,
+.admin-total p {
+  display: inline;
+
+  margin: 0;
+}
+
+.admin-total span {
+  font-size: 1rem;
+  color: #000483;
+}
+
+.admin-total p {
+  margin-left: 0.35rem;
+
+  font-size: 0.9rem;
+}
+
+.admin-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  padding-top: 1.5rem;
+}
+
+.admin-categories > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-categories span {
+  order: 2;
+
+  font-size: 0.9rem;
+  color: #000483;
+}
+
+.admin-categories p {
+  order: 1;
+
+  margin: 0;
+
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* --------------------
+   ADMIN FORMS
+-------------------- */
+
+.admin form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  font-size: 0.9rem;
+}
+
+.admin input,
+.admin textarea,
+.admin select,
+.admin-edit-form input,
+.admin-edit-form textarea,
+.admin-edit-form select {
+  width: 100%;
+
+  border: 1px solid #d9dbe8;
+  border-radius: 10px;
+
+  padding: 12px 14px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: #000483;
+
+  background: #ffffff;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.admin textarea,
+.admin-edit-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.admin input:focus,
+.admin textarea:focus,
+.admin select:focus,
+.admin-edit-form input:focus,
+.admin-edit-form textarea:focus,
+.admin-edit-form select:focus {
+  border-color: #000483;
+}
+
+.admin select {
+  cursor: pointer;
+}
+
+/* --------------------
+   ADMIN BUTTONS
+-------------------- */
+
+.admin button {
+  align-self: center;
+
+  margin-top: 0.5rem;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 14px 28px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  background: #000483;
+  color: #f4faff;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.admin button:active {
+  transform: scale(0.96);
+}
+
+/* --------------------
+   ADMIN FEEDBACK
+-------------------- */
+
+.admin-success {
+  margin: 1.25rem 0 0;
+
+  text-align: center;
+
+  font-size: 1rem;
+  color: green;
+}
+
+.admin-success.success {
+  color: green;
+}
+
+.admin-success.error {
+  color: red;
+}
+
+/* --------------------
+   ADMIN IMPORT
+-------------------- */
+
+.admin-import {
+  margin-top: 4rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid #e4e5ed;
+}
+
+.admin-import h2 {
+  margin-top: 0;
+}
+
+.admin-import input[type="file"] {
+  width: 100%;
+
+  border: 1px solid #d9dbe8;
+  border-radius: 10px;
+
+  padding: 12px 14px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #000483;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.admin-import-file {
+  margin: 0.75rem 0 0;
+
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* --------------------
+   ADMIN MESSAGES
+-------------------- */
+
+.admin-messages {
+  margin-top: 4rem;
+}
+
+.admin-messages h2 {
+  margin-bottom: 1.5rem;
+}
+
+.admin-message {
+  padding: 1.5rem 0;
+
+  border-top: 1px solid #e4e5ed;
+}
+
+.admin-quote {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.admin-author {
+  margin: 0.75rem 0 0;
+
+  font-size: 0.9rem;
+}
+
+.admin-source {
+  margin: 0.35rem 0 0;
+
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.admin-category {
+  display: inline-block;
+
+  margin: 0.75rem 0 0;
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+
+  background: #f0f1f7;
+}
+
+.admin-message-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* --------------------
+   EDIT ICON
+-------------------- */
+
+.edit-button,
+.delete-button {
+  align-self: auto;
+
+  margin-top: 6px !important;
+  padding: 0 !important;
+
+  width: 24px !important;
+  height: 24px !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+  color: #000483 !important;
+
+  cursor: pointer;
+
+  opacity: 0.55;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.edit-button:active,
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+.edit-button {
+  margin-right: 0 !important;
+
+  font-size: 1.15rem !important;
+  line-height: 1;
+}
+
+.delete-button svg {
+  display: block;
+
+  width: 22px;
+  height: 22px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------
+   ADMIN EDIT
+-------------------- */
+
+.admin-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-edit-form button {
+  align-self: center;
+
+  margin-top: 0.25rem;
+}
+
+.admin-edit-form button + button {
+  margin-top: -0.75rem;
+
+  border: 1px solid #d9dbe8;
+
+  background: transparent;
+  color: #000483;
+}
+
+.admin-edit-form button + button:hover {
+  background: #f4f5fa;
+  opacity: 1;
+}
+
+/* --------------------
+   ADMIN PAGINATION
+-------------------- */
+
+.admin-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  margin-top: 2.5rem;
+}
+
+.admin-pagination button {
+  width: 32px !important;
+  height: 32px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+  color: #000483 !important;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.admin-pagination button:hover:not(:disabled) {
+  background: #f0f1f7 !important;
+
+  opacity: 1;
+
+  transform: none !important;
+}
+
+.admin-pagination button.active {
+  background: #000483 !important;
+  color: #f4faff !important;
+}
+
+.admin-pagination button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* --------------------
+   MOBILE
+-------------------- */
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px;
+  }
+
+  .breathe-title {
+    font-size: 3rem;
+  }
+
+  .typing-text {
+    font-size: 1.1rem;
+  }
+
+  .quote {
+    max-width: 320px;
+    font-size: 1.15rem;
+  }
+
+  .message {
+    min-height: 190px;
+  }
+
+  .admin {
+    max-width: 100%;
+  }
+
+  .admin h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* --------------------
+   ADMIN LOGOUT
+-------------------- */
+
+.admin {
+  position: relative;
+}
+
+.logout-button {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 28px !important;
+  height: 28px !important;
+
+  margin: 0 !important;
+  padding: 4px !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+  color: #000483 !important;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+}
+
+
+.logout-button:active {
+  transform: scale(0.95);
+}
+
+.logout-button svg {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
