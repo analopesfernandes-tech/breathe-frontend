@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
+const API_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:8081'
+
 function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [username, setUsername] = useState('')
@@ -60,7 +63,7 @@ function Admin() {
     const getMessages = async () => {
       try {
         const response = await fetch(
-          'http://localhost:8081/api/messages'
+          `${API_URL}/api/messages`
         )
 
         if (!response.ok) {
@@ -82,7 +85,7 @@ function Admin() {
     const checkAuthentication = async () => {
       try {
         const response = await fetch(
-          'http://localhost:8081/api/auth/me',
+          `${API_URL}/api/auth/me`,
           {
             credentials: 'include'
           }
@@ -115,7 +118,7 @@ function Admin() {
       formData.append('password', password)
 
       const response = await fetch(
-        'http://localhost:8081/login',
+        `${API_URL}/login`,
         {
           method: 'POST',
           headers: {
@@ -132,7 +135,7 @@ function Admin() {
       }
 
       const authResponse = await fetch(
-        'http://localhost:8081/api/auth/me',
+        `${API_URL}/api/auth/me`,
         {
           credentials: 'include'
         }
@@ -166,7 +169,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        'http://localhost:8081/api/messages',
+        `${API_URL}/api/messages`,
         {
           method: 'POST',
           headers: {
@@ -284,7 +287,7 @@ function Admin() {
       })
 
       const response = await fetch(
-        'http://localhost:8081/api/messages/import',
+        `${API_URL}/api/messages/import`,
         {
           method: 'POST',
           headers: {
@@ -336,7 +339,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:8081/api/messages/${id}`,
+        `${API_URL}/api/messages/${id}`,
         {
           method: 'DELETE',
           credentials: 'include'
@@ -368,7 +371,7 @@ function Admin() {
   const updateMessage = async (id, updatedMessage) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/messages/${id}`,
+        `${API_URL}/api/messages/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -406,12 +409,12 @@ function Admin() {
   }
 
   const handleLogout = async () => {
-    await fetch('http://localhost:8081/logout', {
+    await fetch(`${API_URL}/logout`, {
       method: 'POST',
       credentials: 'include'
     })
 
-    window.location.href = '/admin'
+   window.location.href = `${import.meta.env.BASE_URL}admin`
   }
 
   if (!isAuthenticated) {
@@ -880,7 +883,7 @@ function Breathe() {
     try {
       if (messageQueue.current.length === 0) {
         const response = await fetch(
-          'http://localhost:8081/api/messages'
+          `${API_URL}/api/messages`
         )
 
         if (!response.ok) {
@@ -1028,7 +1031,7 @@ function Breathe() {
 }
 
 function App() {
-  if (window.location.pathname === '/admin') {
+  if (window.location.pathname.endsWith('/admin')) {
     return <Admin />
   }
 
