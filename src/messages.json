@@ -1,20 +1,63 @@
 [
   {
-    "text": "The quieter you become, the more you can hear.",
-    "author": "Ram Dass",
-    "source": "",
-    "category": "REFLECTION"
-  },
-  {
-    "text": "What you seek is seeking you.",
-    "author": "Rumi",
+    "text": "Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.",
+    "author": "Albert Einstein",
     "source": "",
     "category": "PHILOSOPHICAL"
   },
   {
-    "text": "There is no way to happiness. Happiness is the way.",
-    "author": "Thich Nhat Hanh",
+    "text": "If I have seen further than others, it is by standing upon the shoulders of giants.",
+    "author": "Isaac Newton",
     "source": "",
-    "category": "GRATITUDE"
+    "category": "PHILOSOPHICAL"
+  },
+  {
+    "text": "Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution; it represents the wise choice of many alternatives - choice, not chance, determines your destiny.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+   {
+    "text": "The more you know, the more you know you don't know.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+   {
+    "text": "We are what we repeatedly do.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+   {
+    "text": "Courage is the first virtue that makes all other virtues possible.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+  {
+    "text": "It is the mark of an educated mind to be able to entertain a thought without accepting it.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+    {
+    "text": "Happiness is a quality of the soul...not a function of one's material circumstances.",
+    "author": "Aristotle",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+    {
+    "text": "Rules for Happiness: something to do, someone to love, something to hope for.",
+    "author": "Immanuel Kant",
+    "source": "",
+    "category": "PHILOSOPHICAL"
+  },
+    {
+    "text": "Patience is the strength of the weak, impatience is the weakness of the strong.",
+    "author": "Immanuel Kant",
+    "source": "",
+    "category": "PHILOSOPHICAL"
   }
+
 ]

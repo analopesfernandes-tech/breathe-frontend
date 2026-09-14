@@ -918,7 +918,19 @@ function Breathe() {
     }
   }
 
+    const warmUpBackend = async () => {
+    try {
+      await fetch(`${API_URL}/api/messages`, {
+        method: 'GET'
+      })
+    } catch (error) {
+      console.error('Backend warm-up failed:', error)
+    }
+  }
+
   useEffect(() => {
+     warmUpBackend()
+     
     let typingInterval
     let descriptionTimeout
     let buttonTimeout
